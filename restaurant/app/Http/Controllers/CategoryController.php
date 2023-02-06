@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return "index";
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return "create";
     }
 
     /**
@@ -34,7 +34,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "store";
     }
 
     /**
@@ -45,7 +45,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return "show " . $id;
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "edit " . $id;
     }
 
     /**
@@ -68,7 +68,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "update";
     }
 
     /**
@@ -79,6 +79,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "destroy";
     }
 }
