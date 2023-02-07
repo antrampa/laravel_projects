@@ -73,9 +73,15 @@
                     </div>
                     <div class="form-group">
                         <label for="image">{{__('Image')}}</label>
+                        @if($food->image)
+                            <br />
+                            <img src="{{asset('images')}}/{{$food->image}}" 
+                                        width="80">
+                        @endif
                         <input type="file" name="image" 
                             class="form-control
                             @error('image') is-invalid @enderror">
+                        
                         @error('image')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message}}
