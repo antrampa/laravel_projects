@@ -25,7 +25,7 @@
                             </span>
                         @enderror
                     </div>
-                    <br/>
+                    
                     <div class="form-group">
                         <button class="btn 
                         btn-outline-primary">{{ __('Submit') }}</button>

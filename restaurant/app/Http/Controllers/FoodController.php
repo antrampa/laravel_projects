@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Food;
 
 class FoodController extends Controller
 {
@@ -23,7 +24,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('food.create');
     }
 
     /**
@@ -34,7 +35,29 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required',
+            'description'=>'required',
+            'price'=>'required|integer',
+            'category'=>'required',
+            'image'=>'required|mimes:png,jpeg,jpg'
+        ]);
+
+        $image = $request->file('image');
+        $imageName = time().".".$image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath,$imageName);
+
+        Food::create([
+            'name'=>$request->get('name'),
+            'description'=>$request->get('description'),
+            'price'=>$request->get('price'),
+            'category_id'=>$request->get('category'),
+            'image'=>$imageName
+        ]);
+
+        return redirect()->back()
+                ->with('message','Food created successfully');
     }
 
     /**
