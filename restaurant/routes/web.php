@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes(['register'=>false]);
 
@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('category', 'CategoryController')->middleware('auth');
 Route::resource('food', 'FoodController')->middleware('auth');
+
+Route::get('/','FoodController@listFood');
