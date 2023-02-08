@@ -14,7 +14,7 @@ Composer
 then open command prom or a terminal into this folder 
 and type
 
-1.> cd <project name>
+1.> cd restaurant
 
 2.> php artisan migrate
 
