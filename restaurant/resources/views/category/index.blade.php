@@ -10,7 +10,15 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">{{ __('All Categories') }}</div>
+                <div class="card-header">{{ __('All Categories') }}
+                    <span class="float-right">
+                        <a href="{{route('category.create')}}">
+                            <button 
+                                class="btn btn-outline-secondary"
+                                >{{__('Add Category')}}</button>
+                        </a>
+                    </span>
+                </div>
                 <div class="card-body">
                     <table class="table">
                         <thead class="thead-dark">
@@ -53,12 +61,13 @@
                                         
                                             <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">{{__('Delete Category')}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
+                                                {{__('Delete category')}} "{{$category->name}}".
                                                 {{ __('Are you sure?')}}
                                             </div>
                                             <div class="modal-footer">
