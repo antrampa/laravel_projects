@@ -145,4 +145,10 @@ class FoodController extends Controller
         $categories = Category::with('food')->get();
         return view('index',compact('categories'));
     }
+
+    public function view($id)
+    {
+        $food = Food::find($id);
+        return view('food.detail', compact('food'));
+    }
 }

@@ -10,13 +10,20 @@
                 <div class="row">
                     @foreach(App\Models\Food::where('category_id',$c->id)->get() as $food)
                     <div class="col-md-3">
+                        <p class="text-center">
                         <img src="{{asset('images')}}/{{$food->image}}" 
                             alt="{{$food->name}}" width="200" height="155">
+                        </p>
+                        
                         <p class="text-center">
                             {{$food->name}} <span>€{{$food->price}}</span>
                         </p>
                         <p class="text-center">
-                            <a href="">view</a>
+                            <a href="{{route('food.view',[$food->id])}}">
+                                <button class="btn btn-outline-danger">
+                                    {{__('View')}}
+                                </button>
+                            </a>
                         </p>
                     </div>
                     @endforeach
