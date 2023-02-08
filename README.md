@@ -2,11 +2,14 @@ What is about this repository ?
 
 This repository includes various projects in Laravel during my laravel courses.
 
-To run:
-Needs:
+To run needs:
+
 MySQL
+
 PHP >= 7.3
+
 Composer
+
 
 then open command prom or a terminal into this folder 
 and type
