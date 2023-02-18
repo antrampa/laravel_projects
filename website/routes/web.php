@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::group(array('nampespace'=>'Backend'), function(){
+    Route::get('/ringtones','App\\Http\\Controllers\\Backend\\RingtoneController@create');
+
+});
+
 Auth::routes([
     'register'=>false
 ]);
