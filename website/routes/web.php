@@ -18,8 +18,8 @@ Route::get('/', function () {
 });
 
 
-Route::group(array('nampespace'=>'Backend'), function(){
-    Route::get('/ringtones','App\\Http\\Controllers\\Backend\\RingtoneController@create');
+Route::group(array('namespace'=>'Backend'), function(){
+    Route::resource('/ringtones','RingtoneController');
 
 });
 

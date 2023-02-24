@@ -25,7 +25,10 @@
                         <div class="form-group">
                             <label for="category">{{__('Category')}}</label>
                             <select name="category" class="form-control">
-
+                                <option value="">{{__('Select category')}}</option>
+                                @foreach(App\Models\Category::all() as $c)
+                                    <option value="{{$c->id}}">{{$c->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
