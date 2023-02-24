@@ -21,6 +21,7 @@ class CreateRingtonesTable extends Migration
             $table->string('file');
             $table->string('format')->nullable();
             $table->string('size')->nullable();
+            $table->integer('download')->nullable()->default(0);
             $table->integer('category_id');    
             $table->timestamps();
         });
